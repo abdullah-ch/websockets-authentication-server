@@ -24,6 +24,7 @@ wss.on('connection', async (ws) => {
   ws.isAlive = true;
   ws.on('error', console.error);
   ws.on('pong', heartbeat);
+
   // Ping after regular interval of times
   clientsPingIntervalMap[ws.uuid] = setInterval(() => {
     ws.send(
@@ -35,10 +36,12 @@ wss.on('connection', async (ws) => {
 
   ws.on('message', async (data) => {
     const parsedMessage = JSON.parse(data.toString('utf-8'));
-    console.log('parsed messaage ===> ', parsedMessage);
     if (parsedMessage?.type === 'PONG') {
       ws.ping(); // make the client's heartbeat alive
     }
+
+    // sending dummy information to the client
+    ws.send(JSON.stringify('I Love LANA DEL REY !!!!'));
   });
 
   ws.on('close', async () => {
