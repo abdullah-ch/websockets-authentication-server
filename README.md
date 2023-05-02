@@ -5,7 +5,7 @@ This Repository implements a Authenticated Websocket Server built in Node Js alo
 ## Features
 It offers the following features:-
 
-* It only allows authenticated clients to make a websocket connection
+* It only allows authenticated clients to make a websocket connection. The server will destroy the socket connection requests from unauthenticated clients
 * It sends ping messages to connected clients after regular intervals to ensure that the connection is still alive
 * It checks the clients' heartbeat status and terminates the connection if it does not receive any response from the client after a certain interval
 
