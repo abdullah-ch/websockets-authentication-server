@@ -1,6 +1,6 @@
 # websockets-authentication-server
 
-This Repository implements a Authenticated Websocket Server built in Node Js along ws library.
+This Repository implements an Authenticated Websocket Server built in Node Js along ws library.
 
 ## Features
 
